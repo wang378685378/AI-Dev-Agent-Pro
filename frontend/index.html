@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Dev Agent Pro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🤖 AI Dev Agent Pro</h1>
+        <div class="input-area">
+            <textarea id="requirement" placeholder="输入你的需求，例如：写一个函数计算斐波那契数列"></textarea>
+            <button id="generate-btn">🚀 开始生成</button>
+        </div>
+        <div class="steps">
+            <div class="step" id="step-start">
+                <span class="icon">⏳</span>
+                <span class="text">分析需求</span>
+            </div>
+            <div class="step" id="step-generate">
+                <span class="icon">⏳</span>
+                <span class="text">生成代码</span>
+            </div>
+            <div class="step" id="step-test">
+                <span class="icon">⏳</span>
+                <span class="text">测试</span>
+            </div>
+            <div class="step" id="step-fix">
+                <span class="icon">⏳</span>
+                <span class="text">修复</span>
+            </div>
+            <div class="step" id="step-done">
+                <span class="icon">⏳</span>
+                <span class="text">完成</span>
+            </div>
+        </div>
+        <div class="log-area">
+            <h3>📋 执行日志</h3>
+            <div id="log"></div>
+        </div>
+        <div class="output-area">
+            <h3>📦 生成结果</h3>
+            <pre id="output"></pre>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
