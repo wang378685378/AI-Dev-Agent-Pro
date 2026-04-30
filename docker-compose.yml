@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: backend.Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - OPENAI_BASE_URL=${OPENAI_BASE_URL:-}
+      - MODEL_NAME=${MODEL_NAME:-gpt-4}
+      - TEMPERATURE=${TEMPERATURE:-0.2}
+      - MAX_RETRIES=${MAX_RETRIES:-3}
+      - TIMEOUT=${TIMEOUT:-60}
+      - MAX_FIX_ATTEMPTS=${MAX_FIX_ATTEMPTS:-3}
+    restart: unless-stopped
+  
+  frontend:
+    build:
+      context: .
+      dockerfile: frontend.Dockerfile
+    ports:
+      - "3000:80"
+    restart: unless-stopped
